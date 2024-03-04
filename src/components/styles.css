@@ -1,0 +1,1005 @@
+body {
+    background-color: black;
+}
+
+
+/* NavBar.css */
+
+
+/* Default styles */
+
+.navbar-container {
+    position: fixed;
+    border-bottom: 2px solid white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo img {
+    min-height: 80px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+}
+
+.menu-items a,
+.menu-items button {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+
+.menu-items button {
+    background-color: #ff443a;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+
+/* Home page CSS*/
+
+
+/* -------------------HeroSection.css -----------------------*/
+
+.hero-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+    background-image: url(/public/bg3.png);
+    background-size: cover;
+}
+
+.content {
+    text-align: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.cta-button {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: darkorange;
+}
+
+/-------------------- About Us Section Styles ----------------/ .about-us-container {
+    color: #f2f2f2;
+    /* Text color for the About Us section */
+    background-image: url("/public/32993629_796169491973.jpg");
+    background-size: cover;
+    height: 80vh;
+    padding: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+.about-us-content {
+    max-width: 1200px;
+    /* Adjust the max-width based on your design */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.technological-photo {
+    flex-basis: 50%;
+}
+
+.technological-photo img {
+    margin-top: 80px;
+    width: 100%;
+    height: auto;
+    border: #001f3f 5px solid;
+    border-radius: 2%;
+}
+
+.about-us-description {
+    margin-top: 80px;
+    flex-basis: 50%;
+    text-align: justify;
+    margin-left: 50px;
+}
+
+.about-us-description h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.Read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: royalblue;
+    /* Set your desired background color */
+    color: #fff;
+    /* Set your desired text color */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+/*------------------------------- How It Works Section--------------------- */
+
+.how-it-works-container {
+    background-color: #000;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.how-it-works-container h2 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+
+/* Icon Container */
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* Animated Icon Styles */
+
+.animated-icon {
+    max-width: 200px;
+    overflow: hidden;
+    /* Ensure overflow is hidden for the animation */
+    background-color: #ff443a;
+    padding: 30px 30px 30px 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.animated-icon img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transform: translateY(0);
+    /* Initial position */
+    transition: transform 0.5s ease;
+    /* Transition for smooth animation */
+}
+
+.animated-icon:hover img {
+    transform: translateY(-20px);
+    /* Move image up on hover */
+}
+
+.animated-icon p {
+    font-size: 18px;
+}
+
+
+/* -----------------benefits of skilllancer component---------------------*/
+
+.benefits-container {
+    background-image: url("/public/32993629_796169491973.jpg");
+    background-size: cover;
+    height: 80vh;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.benefits-container h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.benefit-item {
+    margin-bottom: 30px;
+}
+
+.benefit-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.benefit-title {
+    font-size: 24px;
+    margin-top: 10px;
+    color: white;
+    /* Dark gray color */
+}
+
+.benefit-description {
+    font-size: 16px;
+    color: white;
+    /* Gray color */
+}
+
+
+/* -----------------------testonomial section css---------- */
+
+.testimonials-container {
+    text-align: center;
+    margin-bottom: 100px;
+    background-color: #000;
+    color: white;
+}
+
+.testimonials-container h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.testimonial-card {
+    background-color: #ff443a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.user-info {
+    font-size: 14px;
+    color: white;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.user-role {
+    margin-left: 8px;
+}
+
+
+/* Slick Carousel Styles */
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-track {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    display: none;
+}
+
+.slick-prev,
+.slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    content: "\2190";
+    font-size: 20px;
+    color: #333;
+}
+
+.slick-next:before {
+    content: "\2192";
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 20px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background: white;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+    outline: none;
+}
+
+.slick-dots li button:before {
+    content: "\2022";
+    font-size: 20px;
+    color: white;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #ff443a;
+}
+
+
+/* -----------------CTA action button component---------------------*/
+
+.cta-section {
+    background-image: url("/public/32993629_796169491973.jpg");
+    background-size: cover;
+    height: 50vh;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.cta-section h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #333;
+}
+
+.post-project-button {
+    background-color: #ff443a;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+/* -----------------login page component---------------------*/
+
+.form {
+    background-color: white;
+    display: block;
+    padding: 1rem;
+    max-width: 350px;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin-left: 35%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.form-title {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container input,
+.form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.input-container input {
+    background-color: transparent;
+    color: black;
+    padding: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 300px;
+    border-radius: 0.5rem;
+    border: 1px solid #ff443a;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.submit {
+    display: block;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+}
+
+.signup-link {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: center;
+}
+
+.signup-link a {
+    text-decoration: underline;
+}
+
+/-----------------register form css---------------/ .form2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    margin: 0 auto;
+    /* Center the form horizontally */
+    border-radius: 0.5rem;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border: 1px solid #ff443a;
+}
+
+.title {
+    font-size: 28px;
+    color: #ff443a;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    text-transform: uppercase;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+}
+
+.title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+}
+
+.signin {
+    text-align: center;
+}
+
+.signin a {
+    color: royalblue;
+}
+
+.signin a:hover {
+    text-decoration: underline royalblue;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.form label .input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span {
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .input:valid+span {
+    color: green;
+}
+
+.submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: 0.3s ease;
+}
+
+.submit:hover {
+    background-color: rgb(56, 90, 194);
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/---------------------project listing css---------------------/
+/* ProjectCard.css */
+
+.project-card {
+    background-color: #87ceeb;
+    /* Sky Blue */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    /* White text */
+    margin-bottom: 10px;
+}
+
+.project-details {
+    color: #fff;
+    /* White text */
+    margin-bottom: 15px;
+}
+
+.project-footer {
+    color: #ddd;
+    /* Light Gray text */
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/----------footer-----------------/ .footer-logo {
+    height: 100px;
+    width: 100px;
+    margin-left: 20px;
+}
+
+.fb {
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
+}
+
+.twitter {
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
+}
+
+.insta {
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+/--------------about us page css------------------/ .introduction-container {
+    position: relative;
+    height: 400px;
+    /* Adjust the height as needed */
+    color: white;
+    text-align: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/public/360_F_403623508_OhrbkZ1zc2NzB9mN1d2ZcO1WrBDGKsxY.jpg") center/cover;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+/--------------user dashboard-----------------/
+/* UserDashboard.css */
+
+.user-dashboard-container {
+    max-width: 800px;
+    margin: 200px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.quick-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    .stat-box {
+        text-align: center;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        h2 {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #3498db;
+        }
+    }
+}
+
+.account-settings {
+    h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #ff443a;
+    }
+}
+
+.dashboard-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logo img {
+        margin-left: 20px;
+    }
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        text-align: right;
+    }
+    .menu-items a,
+    .menu-items button {
+        margin-bottom: 10px;
+    }
+    .menu-icon {
+        display: block;
+        margin-right: 20px;
+    }
+    /* Mobile menu styles */
+    .menu.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: skyblue;
+        padding: 10px;
+    }
+}
+
+.content {
+    text-align: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.cta-button {
+    background-color: royalblue;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff443a;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+}
+
+/------------------FAQ css------------------/ .faq-section {
+    color: white;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
+}
+
+.faq-section h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.faq-item {
+    background-color: white;
+    border-bottom: 1px solid white;
+    border-radius: 10px;
+}
+
+.faq-item h3 {
+    color: royalblue;
+}
+
+.faq-item p {
+    color: black;
+}
+
+
+/* project table */
+
+.Table {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 200px;
+}
+
+.ant-table {
+    width: auto;
+}
+
+.ant-table-thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .Table {
+        overflow-x: scroll;
+    }
+    .ant-table {
+        overflow-x: auto;
+    }
+}
