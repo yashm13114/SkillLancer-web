@@ -19,7 +19,7 @@ const ManageProjects = () => {
         setEditable(record._id);
         form.setFieldsValue({
             title: record.title,
-            description: record.description,
+            discription: record.discription,
             phonenumber: record.phonenumber,
             skills: record.skills,
             budget: record.budget
@@ -170,6 +170,7 @@ const ManageProjects = () => {
             dataIndex: 'phonenumber'
         },
         {
+       
             title: 'skills',
             dataIndex: 'skills',
         },
@@ -179,19 +180,72 @@ const ManageProjects = () => {
         },
         {
             title: 'Actions',
-            render: (text, record) => (
-                <div className='flex cursor-pointer'>
-                    <FaEdit onClick={() => handleEdit(record)} />
+            render: (text, record) => <div className='flex cursor-pointer'> <FaEdit onClick={() => handleEdit(record)} /><div className="group">
+                <p className=" group-hover:text-blue-500"><MdDelete onClick={() => { handleDelete(record) }} /></p>
+                
+                <p className="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">Delete</p>
+                
+            </div>
+                {editable === record._id && (
+                    <div>
+                        {/* Your form for editing, including input fields for each property */}
+                        <button onClick={() => handleEdit(record)}>Save</button>
+                        <button onClick={() => setEditable(null)}>Cancel</button>
+                    </div>
+                )}
 
-                    <Popconfirm title="Sure to delete?" onConfirm={() => handleDelete(record)}>
-                        <MdDelete />
-                    </Popconfirm>
-                    <a href={`https://api.whatsapp.com/send?phone=${record.phonenumber}&text=Hi,%20I'm%20interested%20in%20your%20project`} target="_blank" rel="noopener noreferrer">
-                        <FaWhatsapp />
-                    </a>
-                </div>
-            )
+            </div>,
+            title: 'Actions',
+            render: (text, record) => <div className='flex cursor-pointer'>
+                {editable !== record._id ? (
+                    <FaEdit onClick={() => handleEdit(record)} />
+                ) : (
+                    <Form
+                        form={form}
+                        initialValues={{
+                            title: record.title,
+                            discription: record.title,
+                            skills: record.skills,
+                            budget: record.budget,
+                            
+                        }}
+                        onFinish={() => handleSave(record)}
+                    >
+                        {/* Your update form fields go here */}
+                        <div className=''>
+                            <Form.Item name="title">
+                                <Input />
+                            </Form.Item>
+                            <Form.Item name="discription">
+                                <Input />
+                            </Form.Item>
+                            <Form.Item name="skills">
+                                <Input />
+                            </Form.Item>
+                            <Form.Item name="budget">
+                                <Input />
+                            </Form.Item>
+                           
+                        </div>
+                      
+                        <Form.Item>
+                            <Button type="link" htmlType="submit">Save</Button>
+                            <Popconfirm title="Sure to cancel?" onConfirm={handleCancel}>
+                                <Button type="link">Cancel</Button>
+                            </Popconfirm>
+                        </Form.Item>
+                    </Form>
+                )}
+                <Popconfirm title="Sure to delete?" onConfirm={() => handleDelete(record)}>
+                    <MdDelete />
+                </Popconfirm>
+                <a href={`https://api.whatsapp.com/send?phone=${record.phonenumber}&text=Hi,%20I'm%20interested%20in%20your%20project`} target="_blank" rel="noopener noreferrer">
+        <FaWhatsapp />
+    </a>
+            </div>
+
         }
+        
     ];
 
     return (
