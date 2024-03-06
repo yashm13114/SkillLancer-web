@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const User = require('../model/UserSchema')
 const ProjectSchema = require('../model/ProjectSchema')
+const Message = require('../model/messageSchema')
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "tH1sIsAStr0ngJWtS3cr3tK3y#Y0urApp()yash";
@@ -81,21 +82,52 @@ router.post('/login', async(req, res) => {
         console.log('Token:', token);
         console.log('Cookie set successfully');
 
-        res.json({ message: 'Logged in successfully', token });
+        res.json({ message: 'Logged in successfully', token, user: { username: user.username, name: user.name } });
+
     } catch (err) {
         console.error('Login Error:', err);
         res.status(500).send('Internal Server Error');
     }
 });
+
+// GET route for retrieving user information
+router.get('/user', async(req, res) => {
+    try {
+        // Extract token from the request cookie
+        const token = req.cookies.jwt;
+
+        // Verify token
+        const decodedToken = jwt.verify(token, JWT_SECRET);
+
+        // Extract user ID from decoded token
+        const userId = decodedToken._id;
+
+        // Retrieve user data from the database using the user ID
+        const user = await User.findById(userId);
+
+        // If user not found, return error
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        // Return user information
+        res.json({ user: { username: user.username, name: user.name, email: user.email } });
+
+    } catch (err) {
+        console.error('Error retrieving user information:', err);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 // posting a project
 router.post("/projectposting", async(req, res) => {
-    const { title, discription, skills, budget } = req.body;
-    if (!title || !discription || !skills || !budget) {
+    const { title, discription, phonenumber, skills, budget } = req.body;
+    if (!title || !discription || !phonenumber || !skills || !budget) {
         return res.json({ error: "plz fill it" });
     }
     try {
 
-        const user1 = new ProjectSchema({ title, discription, skills, budget });
+        const user1 = new ProjectSchema({ title, discription, phonenumber, skills, budget });
 
         await user1.save();
 
@@ -156,4 +188,36 @@ router.get("/logout", (req, res) => {
     res.status(200).send("hello");
     // return res.send(req.rootuser)
 });
+
+// GET messages between users
+router.get('/messages', async(req, res) => {
+    const { senderId, receiverId } = req.query;
+    try {
+        if (!senderId || !receiverId || senderId === 'undefined' || receiverId === 'undefined') {
+            return res.status(400).json({ message: 'senderId and receiverId are required' });
+        }
+        const messages = await Message.find({ senderId, receiverId }).sort({ timestamp: 1 });
+        res.json(messages);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Server Error' });
+    }
+});
+
+// POST a new message
+router.post('/messages', async(req, res) => {
+    const { senderId, receiverId, message } = req.body;
+    try {
+        if (!senderId || !receiverId || !message || senderId === 'undefined' || receiverId === 'undefined') {
+            return res.status(400).json({ message: 'senderId, receiverId, and message are required' });
+        }
+        const newMessage = new Message({ senderId, receiverId, message });
+        await newMessage.save();
+        res.status(201).json({ message: 'Message sent successfully' });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Server Error' });
+    }
+});
+
 module.exports = router;

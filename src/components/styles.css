@@ -8,6 +8,9 @@ body {
 
 /* Default styles */
 
+
+/* styles.css */
+
 .navbar-container {
     position: fixed;
     border-bottom: 2px solid white;
@@ -23,9 +26,9 @@ body {
 }
 
 .logo img {
-    min-height: 80px;
+    min-height: 40px;
+    /* Adjusted height */
     margin-right: 10px;
-    margin-left: 40px;
 }
 
 .menu-items {
@@ -50,8 +53,85 @@ body {
 }
 
 .menu-icon {
-    display: none;
+    display: block;
+    color: orange;
     cursor: pointer;
+    margin-left: 600px;
+    font-size: 30px;
+}
+
+
+/* responsive.css */
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: none;
+    }
+    .menu-items {
+        display: $ {
+            isMenuOpen ? 'flex': 'none'
+        }
+        ;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: black;
+        width: 100%;
+    }
+    .menu-items a,
+    .menu-items button {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+    .menu-items button {
+        margin-right: 0;
+        /* Adjusted margin for buttons */
+    }
+    .menu-items a:last-child,
+    .menu-items button:last-child {
+        margin-bottom: 20px;
+        /* Adjusted margin for last item */
+    }
+    .menu-items a:hover,
+    .menu-items button:hover {
+        background-color: #333;
+        /* Adjusted hover background color */
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.sidebar {
+    width: 70%;
+    height: 100%;
+    background-color: #FF443A;
+    color: #ddd;
+    font-size: 50px;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
 }
 
 
@@ -490,6 +570,10 @@ p {
     margin-top: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.post-project-form-container {
+    margin-top: 30px;
 }
 
 
@@ -1002,4 +1086,9 @@ footer {
     .ant-table {
         overflow-x: auto;
     }
+}
+
+.username {
+    font-size: 24px;
+    color: #ddd;
 }

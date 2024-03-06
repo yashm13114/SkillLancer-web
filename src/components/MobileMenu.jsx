@@ -1,27 +1,24 @@
-// MobileMenu.jsx
+// MobileMenu.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles.css';
 
 const MobileMenu = ({ isLoggedIn, isMenuOpen, toggleMenu, onLogout }) => {
+  const handleLinkClick = () => {
+    toggleMenu(); // Close the sidebar when a link is clicked
+  };
+
   return (
-    <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-      <div className="menu-items">
-        <Link to="/" onClick={toggleMenu}>Home</Link>
-        <Link to="/projects" onClick={toggleMenu}>Projects</Link>
+    <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+      <div className="sidebar">
+        <Link to="/" onClick={handleLinkClick}>Home</Link>
+        <Link to="/ManageProjects" onClick={handleLinkClick}>Projects</Link>
+        <Link to="/post-project" onClick={handleLinkClick}>Post a Project</Link>
+        <Link to="/userDashboard" onClick={handleLinkClick}>Dashboard</Link>
         {isLoggedIn ? (
-          <>
-            <Link to="/chats" onClick={toggleMenu}>Chats</Link>
-            <button onClick={onLogout}>Logout</button>
-          </>
+          <button onClick={onLogout}>Logout</button>
         ) : (
-          <Link to="/login" onClick={toggleMenu}>
-            <button>Login</button>
-          </Link>
+          <Link to="/login" onClick={handleLinkClick}>Login</Link>
         )}
-        <Link to="/post-project" onClick={toggleMenu}>
-          <button>Post a Project</button>
-        </Link>
       </div>
     </div>
   );

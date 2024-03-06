@@ -1,5 +1,4 @@
 // App.js
-
 import React, { createContext, useReducer } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/Navbar";
@@ -13,6 +12,7 @@ import PostProjectForm from "./components/PostProjectForm";
 import { initialState, reducer } from "./Reducer/UserReducer";
 import Logout from "./components/Logout";
 import ManageProjects from "./components/ManageProjects";
+import UserDashboard from "./components/UserDashboard";
 export const UserContext = createContext();
 const Routnig = () => {
   return (
@@ -25,9 +25,11 @@ const Routnig = () => {
           <Route path="/projects" element={<ProjectListing />} />
           <Route path="/ManageProjects" element={<ManageProjects />} />
           <Route path="/login" element={<Login />} />{" "}
+          <Route path="/logout" element={<Logout />} />{" "}
           <Route path="/register" element={<RegisterForm />} />{" "}
           <Route path="/post-project" element={<PostProjectForm />} />{" "}
           <Route path="/Logout" element={<Logout />} />{" "}
+          <Route path="/userDashboard" element={<UserDashboard />} />{" "}
           {/* Add more routes for other components/pages */}{" "}
         </Routes>{" "}
         <Footer />

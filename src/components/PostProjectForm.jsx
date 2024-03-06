@@ -5,7 +5,7 @@ import './responsive.css'
 
 const PostProjectForm = ({ onPostProject }) => {
   const [projects, setProjects] = useState({
-    title: "", discription: "", skills: "", budget: ""
+    title: "", discription: "",phonenumber:"",  skills: "", budget: ""
   })
   let name, value;
 
@@ -18,10 +18,10 @@ const PostProjectForm = ({ onPostProject }) => {
   }
   const PostProjects = async (e) => {
     e.preventDefault();
-    const { title, discription, skills, budget } = projects
+    const { title, discription,phonenumber, skills, budget } = projects
 
 
-    if (!title || !discription || !skills || !budget) {
+    if (!title || !discription || !phonenumber|| !skills || !budget) {
       alert("Please fill all the fields")
     } else {
       const res = await fetch('/projectposting', {
@@ -30,7 +30,7 @@ const PostProjectForm = ({ onPostProject }) => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          title, discription, skills, budget
+          title, discription,phonenumber, skills, budget
         })
       })
       const data = await res.json()
@@ -41,7 +41,7 @@ const PostProjectForm = ({ onPostProject }) => {
       } else {
 
         alert("Project posted successfully")
-      
+
         console.log("Project posted successfully");
 
       }
@@ -55,9 +55,9 @@ const PostProjectForm = ({ onPostProject }) => {
       <form className="post-project-form" >
         <label>
           Title:
-          <input type="text"  name='title'
+          <input type="text" name='title'
             value={projects.title}
-            onChange={handleInputs}/>
+            onChange={handleInputs} />
         </label>
         <label>
           Description:
@@ -66,16 +66,22 @@ const PostProjectForm = ({ onPostProject }) => {
             onChange={handleInputs} />
         </label>
         <label>
+          Phone Number:
+          <textarea name='phonenumber'
+            value={projects.phonenumber}
+            onChange={handleInputs} />
+        </label>
+        <label>
           Skills (comma-separated):
           <input type="text" name='skills'
             value={projects.skills}
-            onChange={handleInputs}/>
+            onChange={handleInputs} />
         </label>
         <label>
           Budget:
           <input type="text" name='budget'
             value={projects.budget}
-            onChange={handleInputs}/>
+            onChange={handleInputs} />
         </label>
         <button type="submit" className="submit-button" onClick={PostProjects}>Post Project</button>
       </form>

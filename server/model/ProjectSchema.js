@@ -8,6 +8,10 @@ const ProjectSchema = mongoose.Schema({
         type: String,
         required: [true, "Please enter yourdiscription"],
     },
+    phonenumber: {
+        type: Number,
+        required: [true, "Please enter number"],
+    },
     skills: {
         type: String,
         required: [true, "Please enter your skills"],

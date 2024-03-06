@@ -40,11 +40,12 @@ const Login = () => {
       if (!data) {
         alert('Invalid Credentials');
       } else {
-        
-        dispatch({ type: 'USER', payload: true });
+        dispatch({ type: 'USER', payload: { isLoggedIn: true, user: { ...data, name: data.name, username: data.username } } });
+
         localStorage.setItem('user', JSON.stringify({ ...data, password, email }));
-        alert("Login Successfully")
-        navigate('/')
+        alert("Login Successfully");
+        console.log("Logged in user:", data.username);
+        navigate('/');
       }
     } catch (error) {
       console.error('Error during login:', error);
